@@ -22,5 +22,5 @@ body {
 
 .wrapper {
   display: flex;
-  height: calc(100% - 6rem);
+  height: calc(100% - 90px);
 }

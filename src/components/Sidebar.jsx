@@ -1,19 +1,19 @@
-import logo from "../img/logo.svg";
+import { Logo } from "../img/Logo";
+
 import Menu from "./Sidebar/Menu";
+import Playlist from "./Sidebar/Playlist";
 
 const Sidebar = () => {
   return (
-    <aside className="bg-black text-link w-60 pt-6">
+    <aside className="flex flex-col bg-black text-link w-60 pt-6">
       <div className="px-6 mb-6">
         <a href="./">
-          <img
-            src={logo}
-            alt="Spotify Logo"
-            style={{ width: "100%", maxWidth: "131px", height: "40px" }}
-          />
+          <Logo />
         </a>
       </div>
       <Menu />
+      <hr className="mt-2 mx-6 opacity-20" />
+      <Playlist />
     </aside>
   );
 };

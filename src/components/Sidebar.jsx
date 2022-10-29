@@ -1,4 +1,5 @@
 import { Logo } from "../img/Logo";
+import InstallApp from "./Sidebar/InstallApp";
 
 import Menu from "./Sidebar/Menu";
 import Playlist from "./Sidebar/Playlist";
@@ -14,6 +15,7 @@ const Sidebar = () => {
       <Menu />
       <hr className="mt-2 mx-6 opacity-20" />
       <Playlist />
+      <InstallApp />
     </aside>
   );
 };

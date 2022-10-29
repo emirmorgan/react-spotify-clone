@@ -14,7 +14,7 @@ const Content = () => {
         style={{ minHeight: "calc((100vh - 64px) - 90px)" }}
       >
         <Navbar />
-        <main className="flex flex-col">
+        <main className="flex flex-col px-8 pt-4">
           <Routes>
             <Route exact path="/" element={<Home />} />
             <Route path="search" element={<Search />} />

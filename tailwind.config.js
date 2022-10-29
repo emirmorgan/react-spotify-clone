@@ -8,6 +8,7 @@ module.exports = {
         backdrop: "#121212",
         link: "#b3b3b3",
         footer: "#181818",
+        menu: "#282828",
       },
     },
   },

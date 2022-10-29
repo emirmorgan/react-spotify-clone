@@ -61,9 +61,9 @@ const Menu = () => {
         <div className="cursor-pointer px-2 hover:text-white transition ease-linear duration-200">
           <NavLink
             href="./"
-            className="flex items-center h-10 gap-4 text-sm font-bold px-4"
+            className="flex items-center group h-10 gap-4 text-sm font-bold px-4"
           >
-            <div className="flex justify-center place-items-center bg-link rounded-sm w-6 h-6">
+            <div className="w-6 h-6 flex justify-center place-items-center bg-white rounded-sm bg-opacity-70 group-hover:bg-opacity-100 transition ease-linear duration-200 ">
               <Icon name="plus" size="12" />
             </div>
             <span>Create Playlist</span>
@@ -72,12 +72,9 @@ const Menu = () => {
         <div className="cursor-pointer px-2 hover:text-white transition ease-linear duration-200">
           <NavLink
             href="./"
-            className="flex items-center h-10 gap-4 text-sm font-bold px-4"
+            className="flex items-center group h-10 gap-4 text-sm font-bold px-4"
           >
-            <div
-              className="flex justify-center place-items-center w-6 h-6 rounded-sm"
-              style={{ background: "linear-gradient(135deg,#450af5,#c4efd9)" }}
-            >
+            <div className="w-6 h-6 flex justify-center place-items-center rounded-sm opacity-70 group-hover:opacity-100 bg-gradient-to-br from-violet-800 to-blue-300 transition ease-linear duration-200">
               <Icon name="heart" size="12" />
             </div>
             <span>Liked Songs</span>

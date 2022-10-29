@@ -131,6 +131,89 @@ const HeartIcon = ({ size }) => {
   );
 };
 
+const InstallIcon = ({ size }) => {
+  return (
+    <svg
+      role="img"
+      height={size}
+      width={size}
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        fill="currentColor"
+        d="M12 3a9 9 0 100 18 9 9 0 000-18zM1 12C1 5.925 5.925 1 12 1s11 4.925 11 11-4.925 11-11 11S1 18.075 1 12z"
+      ></path>
+      <path
+        fill="currentColor"
+        d="M12 6.05a1 1 0 011 1v7.486l1.793-1.793a1 1 0 111.414 1.414L12 18.364l-4.207-4.207a1 1 0 111.414-1.414L11 14.536V7.05a1 1 0 011-1z"
+      ></path>
+    </svg>
+  );
+};
+
+const LeftArrowIcon = ({ size }) => {
+  return (
+    <svg
+      role="img"
+      height={size}
+      width={size}
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        fill="currentColor"
+        d="M15.957 2.793a1 1 0 010 1.414L8.164 12l7.793 7.793a1 1 0 11-1.414 1.414L5.336 12l9.207-9.207a1 1 0 011.414 0z"
+      ></path>
+    </svg>
+  );
+};
+
+const RightArrowIcon = ({ size }) => {
+  return (
+    <svg
+      role="img"
+      height={size}
+      width={size}
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        fill="currentColor"
+        d="M8.043 2.793a1 1 0 000 1.414L15.836 12l-7.793 7.793a1 1 0 101.414 1.414L18.664 12 9.457 2.793a1 1 0 00-1.414 0z"
+      ></path>
+    </svg>
+  );
+};
+
+const DownArrowIcon = ({ size }) => {
+  return (
+    <svg
+      height={size}
+      width={size}
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 16 16"
+    >
+      <path fill="currentColor" d="M14 6l-6 6-6-6h12z"></path>
+    </svg>
+  );
+};
+
+const MagnifyingIcon = ({ size }) => {
+  return (
+    <svg
+      height={size}
+      width={size}
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 30 30"
+    >
+      <path
+        fill="#000000"
+        d="M 13 3 C 7.4889971 3 3 7.4889971 3 13 C 3 18.511003 7.4889971 23 13 23 C 15.396508 23 17.597385 22.148986 19.322266 20.736328 L 25.292969 26.707031 A 1.0001 1.0001 0 1 0 26.707031 25.292969 L 20.736328 19.322266 C 22.148986 17.597385 23 15.396508 23 13 C 23 7.4889971 18.511003 3 13 3 z M 13 5 C 17.430123 5 21 8.5698774 21 13 C 21 17.430123 17.430123 21 13 21 C 8.5698774 21 5 17.430123 5 13 C 5 8.5698774 8.5698774 5 13 5 z"
+      />
+    </svg>
+  );
+};
+
 //#endregion
 
 const Icon = ({ name, size = 24 }) => {
@@ -143,6 +226,11 @@ const Icon = ({ name, size = 24 }) => {
     libraryActive: LibraryActiveIcon,
     plus: PlusIcon,
     heart: HeartIcon,
+    install: InstallIcon,
+    leftArrow: LeftArrowIcon,
+    rightArrow: RightArrowIcon,
+    downArrow: DownArrowIcon,
+    magnifying: MagnifyingIcon,
   };
 
   const Component = icons[name];

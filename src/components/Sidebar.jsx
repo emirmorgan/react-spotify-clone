@@ -6,7 +6,7 @@ import Playlist from "./Sidebar/Playlist";
 
 const Sidebar = () => {
   return (
-    <aside className="flex flex-col bg-black text-link w-60 pt-6">
+    <aside className="flex flex-col bg-black text-link w-72 pt-6">
       <div className="px-6 mb-6">
         <a href="./">
           <Logo />

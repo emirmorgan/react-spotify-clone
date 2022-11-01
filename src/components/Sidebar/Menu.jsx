@@ -75,7 +75,7 @@ const Menu = () => {
             className="flex items-center group h-10 gap-4 text-sm font-bold px-4"
           >
             <div className="w-6 h-6 flex justify-center place-items-center rounded-sm opacity-70 group-hover:opacity-100 bg-gradient-to-br from-violet-800 to-blue-300 transition ease-linear duration-200">
-              <Icon name="heart" size="12" />
+              <Icon name="heart" size="12" color="white" />
             </div>
             <span>Liked Songs</span>
           </NavLink>

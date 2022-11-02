@@ -8,13 +8,13 @@ import Library from "../views/Library";
 
 const Content = () => {
   return (
-    <div className="w-full h-full">
+    <div className="flex-auto overflow-auto">
       <div
         className="flex flex-col"
         style={{ minHeight: "calc((100vh - 64px) - 90px)" }}
       >
         <Navbar />
-        <main className="flex flex-col px-8 pt-4">
+        <main className="flex flex-col px-8 pt-4 pb-4">
           <Routes>
             <Route exact path="/" element={<Home />} />
             <Route path="search" element={<Search />} />

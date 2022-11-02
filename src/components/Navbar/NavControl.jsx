@@ -5,7 +5,7 @@ const NavControl = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="flex gap-4">
+    <div className="hidden lg:flex gap-4">
       <button
         className="w-8 h-8 flex justify-center items-center rounded-full bg-black"
         onClick={() => navigate(-1)}

@@ -14,13 +14,13 @@ const NavContent = () => {
           <div>
             <input
               type="text"
-              className="rounded-full font-normal text-black placeholder-gray-500 text-sm w-[320px] px-2 focus:outline-none"
+              className="rounded-full font-normal text-black placeholder-gray-500 text-sm w-[210px] md:w-[320px] px-2 focus:outline-none"
               placeholder="What do you want to listen to?"
             />
           </div>
         </div>
       ) : location.pathname === "/library" ? (
-        <nav className="pl-6">
+        <nav className="hidden md:block">
           <ul className="flex gap-2">
             <li>
               <a

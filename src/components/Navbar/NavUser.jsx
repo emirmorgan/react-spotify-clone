@@ -14,8 +14,8 @@ const NavUser = () => {
               alt="Emir"
             ></img>
           </div>
-          <span className="text-sm font-bold">Emir</span>
-          <div className="mr-[6px]">
+          <span className="hidden lg:block text-sm font-bold">Emir</span>
+          <div className="hidden lg:block mr-[6px]">
             <Icon name="downArrow" size="16" />
           </div>
         </div>

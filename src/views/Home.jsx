@@ -2,11 +2,10 @@ import Songs from "../data/songs";
 import Icon from "../img/Icons";
 
 const Home = () => {
-  console.log(Songs);
   return (
     <div className="flex flex-col gap-6">
       <h2 className="font-bold text-2xl">Recently played</h2>
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6">
         {Songs.map((song) => (
           <div className="flex flex-col group rounded-md cursor-pointer p-4 bg-footer hover:bg-menu">
             <div className="flex flex-col relative mb-4">
@@ -34,7 +33,7 @@ const Home = () => {
         ))}
       </div>
       <h2 className="font-bold text-2xl">New releases for you</h2>
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6">
         {Songs.map((song) => (
           <div className="flex flex-col group rounded-md cursor-pointer p-4 bg-footer hover:bg-menu">
             <div className="flex flex-col relative mb-4">
@@ -62,7 +61,7 @@ const Home = () => {
         ))}
       </div>
       <h2 className="font-bold text-2xl">Recommended for today</h2>
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6">
         {Songs.map((song) => (
           <div className="flex flex-col group rounded-md cursor-pointer p-4 bg-footer hover:bg-menu">
             <div className="flex flex-col relative mb-4">

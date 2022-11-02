@@ -8,7 +8,7 @@ const Player = () => {
 
   return (
     <>
-      <div className="flex items-center h-full min-w-[180px] w-[30%] ">
+      <div className="flex items-center w-[30%]">
         <div className="relative group">
           <div className="opacity-0 absolute right-0 rounded-full bg-black bg-opacity-60 p-1 mt-1 mr-1 hover:scale-110 hover:bg-opacity-80 group-hover:opacity-100">
             <Icon name="upArrow" size="16" />
@@ -21,7 +21,7 @@ const Player = () => {
           </div>
         </div>
         <div className="flex flex-col mx-[14px]">
-          <a href="./" className="text-sm font-semibold hover:underline ">
+          <a href="./" className="text-sm font-semibold hover:underline">
             Put Your Head on My Shoulder
           </a>
           <a href="./" className="text-xs text-link hover:underline">
@@ -32,7 +32,7 @@ const Player = () => {
           <Icon name="like" size="16" />
         </button>
       </div>
-      <div className="flex flex-col items-center justify-center h-full max-w-[722px] w-2/5 gap-2 px-4">
+      <div className="flex flex-col items-center justify-center w-[40%] gap-2 px-4">
         <div className="flex gap-6 mb-1">
           <button className="cursor-default text-link hover:text-white">
             <Icon name="shuffle" size="16" />
@@ -64,7 +64,7 @@ const Player = () => {
           <span className="text-xs text-link font-thin">0:00</span>
         </div>
       </div>
-      <div className="flex items-center justify-end h-full min-w-[180px] w-[30%] gap-2">
+      <div className="flex items-center justify-end w-[30%] gap-2">
         <div className="flex items-center">
           <button className="text-link hover:text-white p-2">
             <Icon name="lyrics" size="16" />

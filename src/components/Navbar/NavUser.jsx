@@ -29,7 +29,7 @@ const NavUser = () => {
         leaveFrom="transform opacity-100 scale-100"
         leaveTo="transform opacity-0 scale-95"
       >
-        <Menu.Items className="absolute right-0 mt-2 w-48 max-w-[350px] bg-menu origin-top-right rounded shadow-lg focus:outline-none">
+        <Menu.Items className="absolute right-0 mt-2 w-48 max-w-[350px] bg-menu origin-top-right rounded shadow-lg z-50 focus:outline-none">
           <div className="px-1 py-1">
             <Menu.Item>
               {({ active }) => (

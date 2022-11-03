@@ -4,7 +4,7 @@ const Search = () => {
   return (
     <div className="flex flex-col gap-6">
       <h2 className="font-bold text-2xl">Browse all</h2>
-      <div className="grid xs:grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-6">
+      <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-6">
         {Categories.map((category) => (
           <div
             className="flex flex-col relative rounded-md cursor-pointer max-w-[250px] after:pt-[60%] overflow-hidden"

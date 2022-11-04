@@ -1,23 +1,36 @@
 import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import Icon from "../../img/Icons";
+import { openSidebarImage } from "../../redux/playerSlice";
 import PlayerSlider from "./PlayerSlider";
 
 const Player = () => {
+  const dispatch = useDispatch();
+
   const [volume, setVolume] = useState(0.3);
   const [time, setTime] = useState(0);
 
+  const currentSong = useSelector((state) => state.player.currentSong);
+  const sidebarImage = useSelector((state) => state.player.sidebarImage);
+
   return (
     <>
-      <div className="flex items-center w-[30%] overflow-hidden">
+      <div
+        className={
+          currentSong.id === 0
+            ? "invisible w-[30%]"
+            : "flex items-center w-[30%] overflow-hidden"
+        }
+      >
         <div className="relative group">
-          <div className="opacity-0 absolute right-0 rounded-full bg-black bg-opacity-60 p-1 mt-1 mr-1 hover:scale-110 hover:bg-opacity-80 group-hover:opacity-100">
+          <div
+            className="opacity-0 absolute right-0 rounded-full bg-black bg-opacity-60 p-1 mt-1 mr-1 hover:scale-110 hover:bg-opacity-80 group-hover:opacity-100"
+            onClick={() => dispatch(openSidebarImage())}
+          >
             <Icon name="upArrow" size="16" />
           </div>
-          <div className="w-14 h-14">
-            <img
-              src="https://i.scdn.co/image/ab67616d0000485123e5822ae255ef170c40caf0"
-              alt="Paul Anka"
-            />
+          <div className={sidebarImage ? "hidden" : "w-14 h-14"}>
+            <img src={currentSong.image} alt={currentSong.artist} />
           </div>
         </div>
         <div className="flex flex-col mx-[14px]">
@@ -25,10 +38,10 @@ const Player = () => {
             href="./"
             className="text-sm font-semibold hover:underline max-w-[150px] truncate"
           >
-            Put Your Head on My Shoulder
+            {currentSong.title}
           </a>
           <a href="./" className="text-xs text-link hover:underline">
-            Paul Anka
+            {currentSong.artist}
           </a>
         </div>
         <button className=" text-link hover:text-white cursor-default">

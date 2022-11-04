@@ -43,7 +43,7 @@ export default [
     id: 6,
     type: "artist",
     title: "Ozzy Osbourne",
-    artist: "Artist",
+    artist: "Ozzy Osbourne",
     image: "https://i.scdn.co/image/ab6761610000f178b5b52f7e13f720c7a4856306",
     src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3",
   },

@@ -1,7 +1,12 @@
 import Songs from "../data/songs";
 import Icon from "../img/Icons";
 
+import { useDispatch } from "react-redux";
+import { playTheSong } from "../redux/playerSlice";
+
 const Home = () => {
+  const dispatch = useDispatch();
+
   return (
     <div className="flex flex-col gap-6">
       <h2 className="font-bold text-2xl">Recently played</h2>
@@ -18,6 +23,7 @@ const Home = () => {
               <div
                 className="flex items-center justify-center opacity-0 absolute bottom-3 right-3 w-12 h-12 rounded-full text-black bg-green-400 hover:scale-105 group-hover:opacity-100 transition-all ease-linear duration-200"
                 style={{ boxShadow: "0 8px 8px rgb(0 0 0 / 30%)" }}
+                onClick={() => dispatch(playTheSong(song))}
               >
                 <div className="mx-auto my-auto">
                   <Icon name="play" size={18} />
@@ -29,7 +35,7 @@ const Home = () => {
                 {song.title}
               </span>
               <span className="text-link text-sm truncate ...">
-                {song.artist}
+                {song.type === "artist" ? "Artist" : song.artist}
               </span>
             </div>
           </div>
@@ -46,7 +52,11 @@ const Home = () => {
                 className={song.type === "artist" ? "rounded-full" : "rounded"}
                 style={{ boxShadow: "0 8px 24px rgb(0 0 0 / 50%)" }}
               />
-              <div className="flex items-center justify-center opacity-0 absolute bottom-3 right-3 w-12 h-12 rounded-full text-black bg-green-400 hover:scale-105 group-hover:opacity-100 transition-all ease-linear duration-200">
+              <div
+                className="flex items-center justify-center opacity-0 absolute bottom-3 right-3 w-12 h-12 rounded-full text-black bg-green-400 hover:scale-105 group-hover:opacity-100 transition-all ease-linear duration-200"
+                style={{ boxShadow: "0 8px 8px rgb(0 0 0 / 30%)" }}
+                onClick={() => dispatch(playTheSong(song))}
+              >
                 <div className="mx-auto my-auto">
                   <Icon name="play" size={18} />
                 </div>
@@ -57,7 +67,7 @@ const Home = () => {
                 {song.title}
               </span>
               <span className="text-link text-sm truncate ...">
-                {song.artist}
+                {song.type === "artist" ? "Artist" : song.artist}
               </span>
             </div>
           </div>
@@ -74,7 +84,11 @@ const Home = () => {
                 className={song.type === "artist" ? "rounded-full" : "rounded"}
                 style={{ boxShadow: "0 8px 24px rgb(0 0 0 / 50%)" }}
               />
-              <div className="flex items-center justify-center opacity-0 absolute bottom-3 right-3 w-12 h-12 rounded-full text-black bg-green-400 hover:scale-105 group-hover:opacity-100 transition-all ease-linear duration-200">
+              <div
+                className="flex items-center justify-center opacity-0 absolute bottom-3 right-3 w-12 h-12 rounded-full text-black bg-green-400 hover:scale-105 group-hover:opacity-100 transition-all ease-linear duration-200"
+                style={{ boxShadow: "0 8px 8px rgb(0 0 0 / 30%)" }}
+                onClick={() => dispatch(playTheSong(song))}
+              >
                 <div className="mx-auto my-auto">
                   <Icon name="play" size={18} />
                 </div>
@@ -85,7 +99,7 @@ const Home = () => {
                 {song.title}
               </span>
               <span className="text-link text-sm truncate ...">
-                {song.artist}
+                {song.type === "artist" ? "Artist" : song.artist}
               </span>
             </div>
           </div>

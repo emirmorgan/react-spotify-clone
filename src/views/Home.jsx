@@ -1,18 +1,22 @@
 import Songs from "../data/songs";
 import Icon from "../img/Icons";
 
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { playTheSong } from "../redux/playerSlice";
 
 const Home = () => {
   const dispatch = useDispatch();
+  const currentSong = useSelector((state) => state.player.currentSong);
 
   return (
     <div className="flex flex-col gap-6">
       <h2 className="font-bold text-2xl">Recently played</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6">
         {Songs.map((song) => (
-          <div className="flex flex-col group rounded-md cursor-pointer p-4 bg-footer hover:bg-menu">
+          <div
+            key={song.id}
+            className="flex flex-col group rounded-md cursor-pointer p-4 bg-footer hover:bg-menu"
+          >
             <div className="flex flex-col relative mb-4">
               <img
                 src={song.image}
@@ -26,14 +30,16 @@ const Home = () => {
                 onClick={() => dispatch(playTheSong(song))}
               >
                 <div className="mx-auto my-auto">
-                  <Icon name="play" size={18} />
+                  {song.id === currentSong.id ? (
+                    <Icon name="pause" size={18} />
+                  ) : (
+                    <Icon name="play" size={18} />
+                  )}
                 </div>
               </div>
             </div>
             <div className="flex flex-col">
-              <span numberOf className="font-bold pb-1 truncate ...">
-                {song.title}
-              </span>
+              <span className="font-bold pb-1 truncate ...">{song.title}</span>
               <span className="text-link text-sm truncate ...">
                 {song.type === "artist" ? "Artist" : song.artist}
               </span>
@@ -44,7 +50,10 @@ const Home = () => {
       <h2 className="font-bold text-2xl">New releases for you</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6">
         {Songs.map((song) => (
-          <div className="flex flex-col group rounded-md cursor-pointer p-4 bg-footer hover:bg-menu">
+          <div
+            key={song.id}
+            className="flex flex-col group rounded-md cursor-pointer p-4 bg-footer hover:bg-menu"
+          >
             <div className="flex flex-col relative mb-4">
               <img
                 src={song.image}
@@ -58,14 +67,16 @@ const Home = () => {
                 onClick={() => dispatch(playTheSong(song))}
               >
                 <div className="mx-auto my-auto">
-                  <Icon name="play" size={18} />
+                  {song.id === currentSong.id ? (
+                    <Icon name="pause" size={18} />
+                  ) : (
+                    <Icon name="play" size={18} />
+                  )}
                 </div>
               </div>
             </div>
             <div className="flex flex-col">
-              <span numberOf className="font-bold pb-1 truncate ...">
-                {song.title}
-              </span>
+              <span className="font-bold pb-1 truncate ...">{song.title}</span>
               <span className="text-link text-sm truncate ...">
                 {song.type === "artist" ? "Artist" : song.artist}
               </span>
@@ -76,7 +87,10 @@ const Home = () => {
       <h2 className="font-bold text-2xl">Recommended for today</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6">
         {Songs.map((song) => (
-          <div className="flex flex-col group rounded-md cursor-pointer p-4 bg-footer hover:bg-menu">
+          <div
+            key={song.id}
+            className="flex flex-col group rounded-md cursor-pointer p-4 bg-footer hover:bg-menu"
+          >
             <div className="flex flex-col relative mb-4">
               <img
                 src={song.image}
@@ -90,14 +104,16 @@ const Home = () => {
                 onClick={() => dispatch(playTheSong(song))}
               >
                 <div className="mx-auto my-auto">
-                  <Icon name="play" size={18} />
+                  {song.id === currentSong.id ? (
+                    <Icon name="pause" size={18} />
+                  ) : (
+                    <Icon name="play" size={18} />
+                  )}
                 </div>
               </div>
             </div>
             <div className="flex flex-col">
-              <span numberOf className="font-bold pb-1 truncate ...">
-                {song.title}
-              </span>
+              <span className="font-bold pb-1 truncate ...">{song.title}</span>
               <span className="text-link text-sm truncate ...">
                 {song.type === "artist" ? "Artist" : song.artist}
               </span>

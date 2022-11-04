@@ -24,4 +24,5 @@ export const playerSlice = createSlice({
 });
 
 export default playerSlice.reducer;
-export const { playTheSong, openSidebarImage } = playerSlice.actions;
+export const { playTheSong, openSidebarImage, updateControls } =
+  playerSlice.actions;

@@ -31,7 +31,7 @@ const Sidebar = () => {
             className="w-full h-full object-cover absolute top-0 left-0"
           />
           <button
-            class="absolute flex items-center justify-center w-6 h-6 bg-black text-white rounded-full opacity-0 group-hover:opacity-60 hover:!opacity-100 hover:scale-110 top-2 right-2"
+            className="absolute flex items-center justify-center w-6 h-6 bg-black text-white rounded-full opacity-0 group-hover:opacity-60 hover:!opacity-100 hover:scale-110 top-2 right-2"
             onClick={() => dispatch(openSidebarImage())}
           >
             <svg role="img" height="16" width="16" viewBox="0 0 16 16">

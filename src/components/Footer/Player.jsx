@@ -1,20 +1,32 @@
-import { useState } from "react";
+import { useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useAudio } from "react-use";
 import Icon from "../../img/Icons";
 import { openSidebarImage } from "../../redux/playerSlice";
+import { convertSeconds } from "../../utils";
 import PlayerSlider from "./PlayerSlider";
 
 const Player = () => {
   const dispatch = useDispatch();
 
-  const [volume, setVolume] = useState(0.3);
-  const [time, setTime] = useState(0);
-
   const currentSong = useSelector((state) => state.player.currentSong);
   const sidebarImage = useSelector((state) => state.player.sidebarImage);
 
+  const [audio, state, controls] = useAudio({
+    src: currentSong.src,
+    autoPlay: true,
+  });
+
+  const volumeIcon = useMemo(() => {
+    if (state.volume === 0 || state.muted) return "volumeMuted";
+    if (state.volume > 0 && state.volume < 0.33) return "volumeLower";
+    if (state.volume >= 0.33 && state.volume < 0.66) return "volumeNormal";
+    return "volumeFull";
+  }, [state.volume, state.muted]);
+
   return (
     <>
+      {audio}
       <div
         className={
           currentSong.id === 0
@@ -56,8 +68,15 @@ const Player = () => {
           <button className="cursor-default text-link hover:text-white">
             <Icon name="leftPlay" size="16" />
           </button>
-          <button className="cursor-default bg-white p-2 rounded-full text-black hover:scale-110">
-            <Icon name="play" size="16" />
+          <button
+            className="cursor-default bg-white p-2 rounded-full text-black hover:scale-110"
+            onClick={state.paused ? controls.play : controls.pause}
+          >
+            {state.paused ? (
+              <Icon name="play" size="16" />
+            ) : (
+              <Icon name="pause" size="16" />
+            )}
           </button>
           <button className="cursor-default text-link hover:text-white">
             <Icon name="rightPlay" size="16" />
@@ -67,17 +86,21 @@ const Player = () => {
           </button>
         </div>
         <div className="flex items-center w-full h-3 group gap-2">
-          <span className="text-xs text-link font-thin">0:00</span>
+          <span className="text-xs text-link font-thin">
+            {currentSong.id !== 0 ? convertSeconds(state.time) : "0:00"}
+          </span>
           <div className="flex items-center w-full">
             <PlayerSlider
-              step={0.01}
+              step={0.1}
               min={0}
-              max={1}
-              value={time}
-              onChange={(time) => setTime(time)}
+              max={state.duration || 1}
+              value={state.time}
+              onChange={(value) => controls.seek(value)}
             />
           </div>
-          <span className="text-xs text-link font-thin">0:00</span>
+          <span className="text-xs text-link font-thin">
+            {currentSong.id !== 0 ? convertSeconds(state.duration) : "0:00"}
+          </span>
         </div>
       </div>
       <div className="flex items-center justify-end w-[20%] md:w-[30%] gap-2">
@@ -94,15 +117,18 @@ const Player = () => {
         </div>
         <div className="flex items-center gap-3 mr-1">
           <button className="text-link hover:text-white">
-            <Icon name="volume" size="16" />
+            <Icon name={volumeIcon} size="16" />
           </button>
           <div className="flex items-center w-16 md:w-24">
             <PlayerSlider
               step={0.01}
               min={0}
               max={1}
-              value={volume}
-              onChange={(volume) => setVolume(volume)}
+              value={state.volume}
+              onChange={(value) => {
+                controls.unmute();
+                controls.volume(value);
+              }}
             />
           </div>
         </div>

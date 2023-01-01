@@ -1,3 +1,14 @@
+### Live: https://imaginative-otter-9b6660.netlify.app/
+
+## Technologies
++ React.js
++ Redux
++ TailwindCSS & HeadlessUI
++ react-router, react-range, react-use
+
+## Preview
+![Screenshot](https://user-images.githubusercontent.com/53477261/210176878-d3e909d2-6823-4645-a4ea-2ccbe128cd62.PNG)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
